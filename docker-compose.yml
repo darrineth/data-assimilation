@@ -1,0 +1,11 @@
+version: "2.2"
+services:
+  jupyter:
+    image: agh/data-assimilation
+    container_name: agh_data_assimilation
+    volumes:
+      - type: bind
+        source: ./notebooks
+        target: /opt/notebooks
+    ports:
+      - 8888:8888
