@@ -8,6 +8,8 @@ RUN cd /tmp/data-assimilation && python setup.py build_ext --use-cython && pytho
 
 RUN git clone https://github.com/cknd/pyESN.git /tmp/pyESN
 
+ADD ./static/ /opt/static/
+
 EXPOSE 8888
 
 CMD [ "opt/conda/bin/jupyter", "notebook", "--notebook-dir=/opt/notebooks", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root" ]
