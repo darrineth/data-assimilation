@@ -157,3 +157,4 @@ dmypy.json
 
 DAPPER/
 data-assimilation/
+notebooks/.ipynb_checkpoints
