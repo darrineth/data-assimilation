@@ -1,5 +1,9 @@
 FROM continuumio/anaconda3
 
+# Those dependencies are required for exporting the notebook as a *.pdf file.
+RUN pip install nbconvert[webpdf]
+RUN apt-get update && apt-get -y install pandoc texlive-xetex texlive-fonts-recommended texlive-generic-recommended
+
 RUN pip install numpy scipy numba pyfftw
 RUN apt-get update && apt-get install --reinstall build-essential -y && apt-get install gcc -y
 
